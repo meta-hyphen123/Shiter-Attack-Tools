@@ -49,7 +49,9 @@ showtext1 = """
     [4]loic
     [5]hulk
     [6]hulk-gui
-    [7]exit
+    [7]WTF DDos
+    [8]ddos-ripper
+    [9]exit
 
     input the number of tool you want to use
 """
@@ -114,7 +116,7 @@ def main():
         user_input = input(shitermaininput)
         if not user_input:
             continue
-        if user_input.lower() == '7':
+        if user_input.lower() == '9':
             break
         elif user_input.lower() == '1':
             run_python_script(pathopen + "\\ddos-attack.py")
@@ -126,6 +128,10 @@ def main():
             run_python_script(pathopen + "\\hulk-gui.py")
         elif user_input.lower() == '5':
             run_python_script(pathopen + "\\hulk.py")
+        elif user_input.lower() == '7':
+            run_python_script(pathopen + "\\WTF.py")
+        elif user_input.lower() == '8':
+            run_python_script(pathopen + "\\DRipper.py")
         elif user_input.lower() == '4':
             print("try input “loic”")
         elif user_input.lower().startswith('about '):
