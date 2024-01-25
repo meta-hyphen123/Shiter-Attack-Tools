@@ -46,7 +46,9 @@ showtext1 = """
     •sqlmap        sqlmap tool
     •ddos          some ddos tools
     •attack flood  python flood Dos
+    •web2attck     
     •exit
+
 
     input the number of tool you want to use
 """
@@ -92,9 +94,17 @@ def run_python_script(script_path):
     except subprocess.CalledProcessError as e:
         print(f"Error running Python script: {e}")
 
-def run_python_script11(script_path):
+def run_dogshit(script_path):
     try:
         subprocess.run(["python", script_path], check=True)
+    except FileNotFoundError:
+        print(f"Python interpreter not found. Make sure Python is installed.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error running Python script: {e}")
+
+def run_python_script11(script_path):
+    try:
+        subprocess.run(["cd", script_path], check=True)
     except FileNotFoundError:
         print(f"Python interpreter not found. Make sure Python is installed.")
     except subprocess.CalledProcessError as e:
@@ -120,18 +130,29 @@ def main():
             run_python_script(pathopen + "Tools\\ddos_Open.py")
         elif user_input.lower() == 'sql':
             run_python_script(pathopen + "\\Tools\\sql.py")
+
         elif user_input.lower() == 'attack flood':
             run_python_script(pathopen + "\\Tools\\psyflood.py")
+
         elif user_input.lower() == 'shiter attack':
             print(f'[white]{shiter}[/white]')
             time.sleep(1)
             print(f'[white]{middle}[/white]')
-        elif user_input.lower() == 'xss':
-            run_python_script(pathopen + "\\Tools\\xss.py")
+
         elif user_input.lower() == 'sqlmap':
             run_python_script(pathopen + "\\Tools\\sqlmap open.py")
+
         elif user_input.lower() == 'sniff':
             run_python_script(pathopen + "\\Tools\\Shiter_Snifer.py")
+
+        elif user_input.lower() == 'xss':
+            run_python_script(pathopen + "\\Tools\\XSS_Open.py")
+
+        elif user_input.lower() == 'web2attack':
+            xss_folder_path = os.path.join(pathdog,"Tools\\web2attack-master")
+            os.chdir(xss_folder_path)
+            run_python_script("w2aconsole.py")
+
         elif user_input.lower().startswith('about '):
             # 提取用户输入中的URL
             url_input = user_input[6:]
