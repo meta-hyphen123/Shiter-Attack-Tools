@@ -50,7 +50,7 @@ showtext1 = """
     •exit
 
 
-    input the number of tool you want to use
+    input the name of tool you want to use
 """
 showtext2 = """
 """
