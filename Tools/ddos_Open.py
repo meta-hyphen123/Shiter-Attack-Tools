@@ -27,34 +27,34 @@ pathdog = os.path.dirname(os.path.abspath(__file__))
 # 使用 os.path.join 构建路径
 pathopen = os.path.join(pathdog, '')
 
-text = """
-
-
- /$$$$$$$  /$$$$$$$                             /$$$$$$    /$$     /$$                         /$$      
-| $$__  $$| $$__  $$                           /$$__  $$  | $$    | $$                        | $$      
-| $$  \ $$| $$  \ $$  /$$$$$$   /$$$$$$$      | $$  \ $$ /$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$$| $$   /$$
-| $$  | $$| $$  | $$ /$$__  $$ /$$_____/      | $$$$$$$$|_  $$_/|_  $$_/   |____  $$ /$$_____/| $$  /$$/
-| $$  | $$| $$  | $$| $$  \ $$|  $$$$$$       | $$__  $$  | $$    | $$      /$$$$$$$| $$      | $$$$$$/ 
-| $$  | $$| $$  | $$| $$  | $$ \____  $$      | $$  | $$  | $$ /$$| $$ /$$ /$$__  $$| $$      | $$_  $$ 
-| $$$$$$$/| $$$$$$$/|  $$$$$$/ /$$$$$$$/      | $$  | $$  |  $$$$/|  $$$$/|  $$$$$$$|  $$$$$$$| $$ \  $$
-|_______/ |_______/  \______/ |_______/       |__/  |__/   \___/   \___/   \_______/ \_______/|__/  \__/"""
-
+text =r'''
+  ____  ____              _____           _     
+ |  _ \|  _ \  ___  ___  |_   _|__   ___ | |___ 
+ | | | | | | |/ _ \/ __|   | |/ _ \ / _ \| / __|
+ | |_| | |_| | (_) \__ \   | | (_) | (_) | \__ \
+ |____/|____/ \___/|___/   |_|\___/ \___/|_|___/
+                                                '''
+yellow_text = f"[#FFFD55]{text}[/]"
 shitermaininput = """
 ┌──(shiter@main)-[ddos~contrl]
 └─$"""
 showtext1 = """
     [1]ddos
-    [2]ddos more mode
-    [3]dos
-    [4]loic
-    [5]hulk
-    [6]hulk-gui
-    [7]WTF DDos
-    [8]ddos-ripper
+    [2]dos
+    [3]loic
+    [4]hulk
+    [5]hulk-gui
+    [6]WTF DDos
+    [7]ddos-ripper
+    [8]slowloris
     [9]exit
 
-    input the number of tool you want to use
-"""
+==========================================================="""
+
+dooo = """    input the number of tool you want to use"""
+yellow_do = f"[#FFFD55]{dooo}[/]"
+
+dogg = """==========================================================="""
 showtext2 = """ """
 def about_url(url):
     try:
@@ -109,9 +109,11 @@ def main():
     # 切换到指定目录
     os.chdir(r"C:\Users\Joe Lu\Desktop\Shiter\Tools")
 
-    print(f"[yellow]{text}[/yellow]")
+    console.print(yellow_text)
     print(f"[red]{showtext2}[/red]")
-    print(showtext1)
+    console.print(showtext1)
+    console.print(yellow_do)
+    console.print(dogg)
     while True:
         user_input = input(shitermaininput)
         if not user_input:
@@ -120,20 +122,20 @@ def main():
             break
         elif user_input.lower() == '1':
             run_python_script(pathopen + "\\ddos-attack.py")
-        elif user_input.lower() == '2':
-            run_python_script(pathopen + "\\Attack.py")
-        elif user_input.lower() == '3':
-            run_python_script(pathopen + "\\start.py")
-        elif user_input.lower() == '6':
-            run_python_script(pathopen + "\\hulk-gui.py")
-        elif user_input.lower() == '5':
-            run_python_script(pathopen + "\\hulk.py")
-        elif user_input.lower() == '7':
-            run_python_script(pathopen + "\\WTF.py")
         elif user_input.lower() == '8':
-            run_python_script(pathopen + "\\DRipper.py")
+            run_python_script(pathopen + "\\slowloris.py")
+        elif user_input.lower() == '2':
+            run_python_script(pathopen + "\\start.py")
+        elif user_input.lower() == '5':
+            run_python_script(pathopen + "\\hulk-gui.py")
         elif user_input.lower() == '4':
-            print("try input “loic”")
+            run_python_script(pathopen + "\\hulk.py")
+        elif user_input.lower() == '6':
+            run_python_script(pathopen + "\\WTF.py")
+        elif user_input.lower() == '7':
+            run_python_script(pathopen + "\\DRipper.py")
+        elif user_input.lower() == '3':
+            print("try input “LOIC”")
         elif user_input.lower().startswith('about '):
             # 提取用户输入中的URL
             url_input = user_input[6:]
