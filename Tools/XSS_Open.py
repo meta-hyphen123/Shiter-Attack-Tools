@@ -23,15 +23,14 @@ console = Console()
 pathdog = os.path.dirname(os.path.abspath(__file__))
 pathopen = os.path.join(pathdog, '')
 
-text = """
- __  ______ ____       _   _   _             _    
- \ \/ / ___/ ___|     / \ | |_| |_ __ _  ___| | __
-  \  /\___ \___ \    / _ \| __| __/ _` |/ __| |/ /
-  /  \ ___) |__) |  / ___ \ |_| || (_| | (__|   < 
- /_/\_\____/____/  /_/   \_\__|\__\__,_|\___|_|\_\\
-                                                  
- """
-
+text = r'''
+ __  __             _   _   _             _    
+ \ \/ /___ ___     / \ | |_| |_ __ _  ___| | __
+  \  // __/ __|   / _ \| __| __/ _` |/ __| |/ /
+  /  \\__ \__ \  / ___ \ |_| || (_| | (__|   < 
+ /_/\_\___/___/ /_/   \_\__|\__\__,_|\___|_|\_\
+                                               '''
+yellow_text = f"[#FFFD55]{text}[/]"
 shitermaininput = """
 ┌──(shiter@XSS)-[~\Tools\XSS]
 └─$"""
@@ -40,13 +39,15 @@ showtext1 = """
      [1] XSS-LOADER TOOLS  xss payload generator
      [2] XSSCon
      [3] XSStrike
-     [4] exit
-    input the number of the tool you want to use
-"""
+     [4] XanXss
+     [5] exit
+==========================================================="""
 
-showtext2 = """
-"""
+dooo = """    input the number of tool you want to use"""
+yellow_do = f"[#FFFD55]{dooo}[/]"
 
+dogg = """==========================================================="""
+showtext2 = """ """
 def about_url(url):
     try:
         parsed_url = urllib.parse.urlparse(url)
@@ -86,18 +87,25 @@ def main():
     tools_folder = "tools"
     target_path = os.path.join(pathdog, tools_folder)
 
-    print(f"[yellow]{text}[/yellow]")
-    print(showtext1)
+    console.print(yellow_text)
+    print(f"[red]{showtext2}[/red]")
+    console.print(showtext1)
+    console.print(yellow_do)
+    console.print(dogg)
     while True:
         user_input = input(shitermaininput)
         if not user_input:
             continue
-        if user_input.lower() == '4':
+        if user_input.lower() == '5':
             break
         elif user_input.lower() == '3':
             xss_folder_path = os.path.join(pathdog,"XSStrike-master")
             os.chdir(xss_folder_path)
             run_python_script("xsstrike.py")
+        elif user_input.lower() == '4':
+            xss_folder_path = os.path.join(pathdog,"XanXSS-master")
+            os.chdir(xss_folder_path)
+            run_python_script("xan.py")
         elif user_input.lower() == '2':
             xss_folder_path = os.path.join(pathdog,"XSSCon-master")
             os.chdir(xss_folder_path)
