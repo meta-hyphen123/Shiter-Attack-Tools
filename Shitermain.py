@@ -18,51 +18,58 @@ from rich import print
 from colorama import Fore, Style  
 from rich.console import Console
 import urllib.parse  # Add this import
+from colorama import Fore, Style
 
 console = Console()
 
 pathdog = os.path.dirname(os.path.abspath(__file__))
-
-# 使用 os.path.join 构建路径
 pathopen = os.path.join(pathdog, '')
 
-text = """
+text = r'''
+ ____  _     _ _                 _   _   _             _    
+/ ___|| |__ (_) |_ ___ _ __     / \ | |_| |_ __ _  ___| | __
+\___ \| '_ \| | __/ _ \ '__|   / _ \| __| __/ _` |/ __| |/ /
+ ___) | | | | | ||  __/ |     / ___ \ |_| || (_| | (__|   < 
+|____/|_| |_|_|\__\___|_|    /_/   \_\__|\__\__,_|\___|_|\_\
+'''
 
- $$$$$$\  $$\       $$\   $$\                                $$$$$$\    $$\     $$\                         $$\       
-$$  __$$\ $$ |      \__|  $$ |                              $$  __$$\   $$ |    $$ |                        $$ |      
-$$ /  \__|$$$$$$$\  $$\ $$$$$$\    $$$$$$\   $$$$$$\        $$ /  $$ |$$$$$$\ $$$$$$\    $$$$$$\   $$$$$$$\ $$ |  $$\ 
-\$$$$$$\  $$  __$$\ $$ |\_$$  _|  $$  __$$\ $$  __$$\       $$$$$$$$ |\_$$  _|\_$$  _|   \____$$\ $$  _____|$$ | $$  |
- \____$$\ $$ |  $$ |$$ |  $$ |    $$$$$$$$ |$$ |  \__|      $$  __$$ |  $$ |    $$ |     $$$$$$$ |$$ /      $$$$$$  / 
-$$\   $$ |$$ |  $$ |$$ |  $$ |$$\ $$   ____|$$ |            $$ |  $$ |  $$ |$$\ $$ |$$\ $$  __$$ |$$ |      $$  _$$<  
-\$$$$$$  |$$ |  $$ |$$ |  \$$$$  |\$$$$$$$\ $$ |            $$ |  $$ |  \$$$$  |\$$$$  |\$$$$$$$ |\$$$$$$$\ $$ | \$$\ 
- \______/ \__|  \__|\__|   \____/  \_______|\__|            \__|  \__|   \____/  \____/  \_______| \_______|\__|  \__| """                                                                                                                                                                                                                                                                                                                                                                                                
+dog = r'''============================================================'''
+
+eee = '''                   Best Hacking Tool'''
+yellow_text = f"[#FFFD55]{text}[/]"
+
+yellow_eee = f"[#FFFD55]{eee}[/]"
+
+
 shitermaininput = """
 ┌──(shiter@main)-[~]
 └─$"""
-showtext1 = """
-    •cmd           use cmd here
-    •xss           XSS attack tool
-    •sql           find sql bug
-    •sqlmap        sqlmap tool
-    •ddos          some ddos tools
-    •attack flood  python flood Dos
-    •web2attck     
-    •exit
 
+showtext1 = f"""
+    cmd              use cmd here
+    [1]xss           XSS attack tool
+    [2]sql           find sql bug
+    [3]sqlmap        sqlmap tool
+    [4]ddos          some ddos tools
+    [5]attack flood  python flood Dos
+    [6]web2attck
+    [7]sniffer
+    [8]exit
 
-    input the name of tool you want to use
-"""
-showtext2 = """
-"""
+==========================================================="""
+
+dooo = """    input the number of tool you want to use"""
+yellow_do = f"[#FFFD55]{dooo}[/]"
+
+dogg = """==========================================================="""
+showtext2 = ""
 def about_url(url):
     try:
         parsed_url = urllib.parse.urlparse(url)
         host = parsed_url.hostname
 
-        # Fetch IP address
         ip = socket.gethostbyname(host)
 
-        # Determine the port based on the URL scheme
         if parsed_url.scheme == 'http':
             port = 80
         elif parsed_url.scheme == 'https':
@@ -71,11 +78,9 @@ def about_url(url):
             print("Unsupported URL scheme.")
             return
 
-        # Print information to the console
         print(f"URL: {url}\nIP Address: {ip}\nPort: {port}")
 
     except Exception as e:
-        # Handle any errors that may occur
         print(f"Error fetching information: {str(e)}")
 
 def run_command(command):
@@ -109,70 +114,69 @@ def run_python_script11(script_path):
         print(f"Python interpreter not found. Make sure Python is installed.")
     except subprocess.CalledProcessError as e:
         print(f"Error running Python script: {e}")
-
-
 def main():
-    # 切换到指定目录
     tools_folder = "tools"
     target_path = os.path.join(pathdog, tools_folder)
 
-    print(f"[yellow]{text}[/yellow]")
-    print(showtext1)
+    console.print(yellow_text)
+    console.print(dog)
+    console.print(yellow_eee)
+    console.print(dog)
+    console.print(showtext1)
+    console.print(yellow_do)
+    console.print(dogg)
+    
+    
     while True:
         user_input = input(shitermaininput)
+        
         if not user_input:
             continue
-        if user_input.lower() == 'exit':
+        if user_input.lower() == '8':
             break
-        if user_input.lower() == 'exit':
-            break
-        elif user_input.lower() == 'ddos':
+            
+            
+        elif user_input.lower() == '4':
             run_python_script(pathopen + "Tools\\ddos_Open.py")
-        elif user_input.lower() == 'sql':
+            
+        elif user_input.lower() == '2':
             run_python_script(pathopen + "\\Tools\\sql.py")
-
-        elif user_input.lower() == 'attack flood':
+            
+        elif user_input.lower() == '5':
             run_python_script(pathopen + "\\Tools\\psyflood.py")
-
-        elif user_input.lower() == 'shiter attack':
-            print(f'[white]{shiter}[/white]')
-            time.sleep(1)
-            print(f'[white]{middle}[/white]')
-
-        elif user_input.lower() == 'sqlmap':
+            
+        elif user_input.lower() == '3':
             run_python_script(pathopen + "\\Tools\\sqlmap open.py")
-
-        elif user_input.lower() == 'sniff':
+            
+        elif user_input.lower() == '7':
             run_python_script(pathopen + "\\Tools\\Shiter_Snifer.py")
-
-        elif user_input.lower() == 'xss':
+            
+        elif user_input.lower() == '1':
             run_python_script(pathopen + "\\Tools\\XSS_Open.py")
-
-        elif user_input.lower() == 'web2attack':
+            
+        elif user_input.lower() == '6':
             xss_folder_path = os.path.join(pathdog,"Tools\\web2attack-master")
             os.chdir(xss_folder_path)
             run_python_script("w2aconsole.py")
-
+            
         elif user_input.lower().startswith('about '):
-            # 提取用户输入中的URL
             url_input = user_input[6:]
             about_url(url_input)
+            
         elif user_input.lower().startswith('dos '):
-            # 使用正则表达式匹配dos命令
             dos_match = re.match(r'dos\s+(\S+)\s+-p\s+(\d+)', user_input.lower())
             if dos_match:
                 ip = dos_match.group(1)
                 port = dos_match.group(2)
-                # 构建Dos.py命令并执行
                 dos_command = f"python C:\\Users\\Joe Lu\\Desktop\\Shiter\\Dos.py -t {ip} -r 10000 -p {port}"
                 result = run_command(dos_command)
-                print(result)
+                console.print(result)
             else:
-                print("Invalid dos command format. Example: dos <IP> -p<port>")
+                console.print("Invalid dos command format. Example: dos <IP> -p<port>")
+                
         else:
             result = run_command(user_input)
-            print(result)
+            console.print(result)
 
 if __name__ == "__main__":
     main()
-
