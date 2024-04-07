@@ -16,6 +16,18 @@
 
 ![Screenshot 2024-01-25 131031](https://github.com/meta-hyphen123/Shiter-Attack-Tools/assets/136706431/e3e3e44b-2a0f-47c2-a989-0eda969dd741)
 
+# Shiter
 
+# Shiter Attack:
+`https://github.com/meta-hyphen123/Shiter-Attack-Tools/`
+
+# Microshit:
+`https://github.com/meta-hyphen123/Microshit/`
+
+# Shiter powershell:
+`https://github.com/meta-hyphen123/Shiter-power-shell`
+
+# Shiter powershell dev:
+`https://github.com/meta-hyphen123/shiter-powershell-pre-dev`
 
 
