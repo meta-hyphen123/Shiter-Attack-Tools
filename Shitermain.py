@@ -4,8 +4,7 @@ import re
 import urllib.parse
 import time
 import socket
-from rich import print
-from rich.console import Console
+
 
 red = "\033[1;31m"
 green = "\033[1;32m"
@@ -16,7 +15,7 @@ cyan = "\033[1;36m"
 violate = "\033[1;37m"
 nc = "\033[00m"
 
-console = Console()
+
 
 pathdog = os.path.dirname(os.path.abspath(__file__))
 pathopen = os.path.join(pathdog, '')
